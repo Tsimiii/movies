@@ -52,9 +52,6 @@ var MovieDetailController = function($scope, $mdDialog, title, imdbId, details) 
     $scope.cancel = function() {
         $mdDialog.hide();
     };
-
-    console.log(title);
-    console.log(details);
 };
 
 app.controller("MovieDetailController", MovieDetailController);
