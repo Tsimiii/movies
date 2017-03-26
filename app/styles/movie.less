@@ -1,0 +1,106 @@
+@dark-brown-color: #5E412F;
+@light-brown-color: #FCEBB6;
+@dark-orange: #F07818;
+@orange: #F0A830;
+@white: white;
+@md-dialog-and-card-width: 600px;
+@md-dialog-height: 300px;
+@card-height: 200px;
+@100percent-width: 100%;
+
+.header, .md-toolbar-tools {
+    background-color: @dark-brown-color;
+    position: fixed;
+    width: @100percent-width;
+}
+body {
+    height: initial;
+}
+.body-background {
+    background-color: @light-brown-color;
+}
+img {
+    object-fit: contain;
+}
+.md-button.md-primary.md-raised {
+    background-color: @orange;
+    color: @dark-brown-color;
+}
+.md-button.md-primary.md-raised:not([disabled]):hover {
+    background-color: #78C0A8;
+}
+.card-container {
+    width: @100percent-width;
+    overflow-y: auto;
+    padding-top: 100px;
+}
+md-card {
+    width: @md-dialog-and-card-width;
+    height: @card-height;
+    margin-left: auto;
+    margin-right: auto;
+}
+.md-headline {
+    width: 80%;
+}
+.md-headline:hover {
+    color: @dark-orange;
+    cursor: pointer;
+}
+.white {
+    color: @white;
+}
+.search {
+    text-align: center;
+}
+.search-button {
+    position: absolute;
+    right: -8px;
+    top: -2px;
+}
+.search-icon {
+    color: @dark-brown-color;
+
+    &:hover {
+        color: @dark-orange;
+        cursor: pointer;
+    }
+}
+.spinner {
+    padding-top: 10px;
+}
+md-input-container {
+    width: 70%;
+
+    .md-input {
+        &:extend(.white);
+        border-color: @white;
+        background-color: @white;
+        color: @dark-brown-color;
+        padding-left: 8px;
+    }
+
+    .md-errors-spacer {
+        min-height: 0px;
+    }
+}
+md-input-container {
+    label {
+        &:extend(.white);
+    }
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: @white;
+    color: @dark-brown-color;
+}
+md-dialog {
+    width: @md-dialog-and-card-width;
+}
+md-dialog-content {
+    height: @md-dialog-height;
+}
+@media only screen and (max-width:620px){
+    md-card {
+        width: @md-dialog-and-card-width - 100px;
+    }
+}

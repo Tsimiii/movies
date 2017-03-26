@@ -1,0 +1,32 @@
+<div>
+    <div class="header">
+        <div class="search">
+            <md-input-container md-no-float>
+                <md-button class="md-icon-button search-button" ng-click="searchMovies()">
+                    <i class="material-icons search-icon">search</i>
+                </md-button>
+                <input type="text" placeholder="Search movie" ng-model="searchText" ng-keyup="$event.keyCode == 13 ? searchMovies() : null">
+
+            </md-input-container>
+            <button class="md-raised md-primary md-button" type="button" ng-click="searchMovies()">Search
+            </button>
+        </div>
+    </div>
+    <div class="card-container">
+        <div ng-show="spinner" layout="row" layout-sm="column" layout-align="space-around" class="spinner">
+            <md-progress-circular md-mode="indeterminate" [color]="black"></md-progress-circular>
+        </div>
+        <md-card ng-hide="spinner" ng-repeat="movie in movies">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline" ng-click="showMovieDetails($event, movie.Title, movie.imdbID)">{{ movie.Title }}</span>
+                    <span class="md-subhead">{{ movie.Type }}</span>
+                    <span class="md-subhead">{{ movie.Year }}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <img ng-src="{{movie.Poster}}" class="md-media-lg" alt="{{movie.imdbID}}" />
+                </md-card-title-media>
+            </md-card-title>
+        </md-card>
+    </div>
+</div>

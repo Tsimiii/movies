@@ -1,0 +1,30 @@
+<md-dialog aria-label={{title}}>
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>{{title}}</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <i class="material-icons">close</i>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <div class="md-dialog-content">
+          <p ng-repeat="section in details">
+          {{section}}
+          </div>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="row">
+        <md-button href="http://www.imdb.com/title/{{imdbId}}" target="_blank">
+          More on IMDB
+        </md-button>
+        <md-button href="http://en.wikipedia.org/wiki/{{title}}" target="_blank">
+          More on Wikipedia
+        </md-button>
+        <span flex></span>
+      </md-dialog-actions>
+    </form>
+</md-dialog>
